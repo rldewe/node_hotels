@@ -5,6 +5,7 @@ const Person=require('./models/Person.js')
 const MenuItem=require('./models/Menu.js')
 const bodyParser=require('body-parser');
 require('dotenv').config();
+const PORT=process.env.PORT || 3000;
 const { connect } = require("mongoose")
 app.use(bodyParser.json())
 app.get('/',function(req,res){
@@ -24,6 +25,6 @@ app.use('/person',personRoutes);
 const menuRouter=require('./routes/menuRoutes.js');
 app.use('/menu',menuRouter);
 
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log("Connected to port 3000")
 })
