@@ -4,6 +4,7 @@ const db=require('./db')
 const Person=require('./models/Person.js')
 const MenuItem=require('./models/Menu.js')
 const bodyParser=require('body-parser');
+require('dotenv').config();
 const { connect } = require("mongoose")
 app.use(bodyParser.json())
 app.get('/',function(req,res){
